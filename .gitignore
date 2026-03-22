@@ -1,0 +1,140 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+
+# ------------------------------------------------------------------------------
+# Flutter & Dart specific
+# ------------------------------------------------------------------------------
+
+# Tool configuration files
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+
+# Build artifacts
+build/
+flutter_*.png
+**/android/build/
+**/ios/build/
+.cxx/
+
+# Flutter-generated files
+.flutter-plugins
+.flutter-plugins-dependencies
+lib/generated_plugin_registrant.dart
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Generated.xcconfig
+**/android/**/GeneratedPluginRegistrant.java
+
+# Dart documentation
+doc/api/
+
+# ------------------------------------------------------------------------------
+# IDE / Editor files
+# ------------------------------------------------------------------------------
+
+# Android Studio / IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+**/android/.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Mac / Linux / Windows system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ------------------------------------------------------------------------------
+# Environment & secrets (never commit these!)
+# ------------------------------------------------------------------------------
+
+# Environment variables (use .env files for local configuration)
+.env
+.env.*
+*.env
+**/.env*
+
+# Keystore files (for signing Android apps)
+*.jks
+*.keystore
+**/android/key.properties
+
+# Firebase configuration files
+google-services.json
+GoogleService-Info.plist
+
+# ------------------------------------------------------------------------------
+# Generated files for web
+# ------------------------------------------------------------------------------
+
+*.dart.js
+*.js_
+*.js.map
+*.info.json
+
+# ------------------------------------------------------------------------------
+# Coverage and test reports (if you generate them)
+# ------------------------------------------------------------------------------
+
+coverage/
+lcov.info
+
+# ------------------------------------------------------------------------------
+# Package lock file – IMPORTANT DECISION
+# ------------------------------------------------------------------------------
+
+# For applications: COMMIT pubspec.lock to ensure reproducible builds.
+# For libraries: IGNORE pubspec.lock to allow dependency flexibility.
+
+# By default, we include it – you can uncomment the next line if you want to ignore it.
+pubspec.lock
