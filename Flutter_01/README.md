@@ -1,6 +1,21 @@
 # Flutter Mobile Application Development
 
 A new Flutter project.
+```
+// To crate flutter application
+flutter create <flutter app name>
+
+cd <flutter app name>
+
+//To check if everything that needs are installed on the system
+flutter doctor
+
+// To run flutter application
+flutter run
+
+```
+
+
 
 ## Getting Started
 
