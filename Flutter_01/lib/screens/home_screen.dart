@@ -1,58 +1,51 @@
 import 'package:flutter/material.dart';
-import 'profile_screen.dart';
-import 'counter_screen.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+// Import widgets
+import '../widgets/cust_category_bar.dart';
+import '../widgets/custom_buttom_nav.dart';
+import '../widgets/post_template.dart';
+
+// Home screen (visible even without login)
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  // Fake login state (for now)
+  bool isLoggedIn = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      // ✅ AppBar with Category Menu on TOP RIGHT
       appBar: AppBar(
-        title: Text("Flutter Widgets Demo"),
+        title: Text("Home Feed"),
+
+        // Actions = right side of AppBar
+        actions: [
+          CategoryMenu(isLoggedIn: isLoggedIn), // menu button
+        ],
       ),
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
 
-            // Icon(Icons.flutter_dash, size: 80),
+      // ✅ Body: List of posts (visible without login)
+      body: ListView.builder(
+        itemCount: 10, // dummy posts count
 
-            SizedBox(height: 20),
-
-            Text(
-              "Flutter UI Components",
-              style: TextStyle(fontSize: 24),
-            ),
-
-            SizedBox(height: 20),
-
-            ElevatedButton(
-              child: Text("Profile UI Example"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ProfileScreen(),
-                  ),
-                );
-              },
-            ),
-
-            ElevatedButton(
-              child: Text("Counter Example"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CounterScreen(),
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
+        itemBuilder: (context, index) {
+          return PostCard(
+            onTap: () {
+              // Navigate to post detail screen
+              Navigator.pushNamed(context, '/postDetail');
+            },
+          );
+        },
       ),
+
+      // ✅ Bottom Navigation with selected index = 0 (HOME)
+      bottomNavigationBar: BottomNav(currentIndex: 0),
     );
   }
 }

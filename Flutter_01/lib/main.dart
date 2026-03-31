@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:ui/app.dart';
+import 'settings/theme_change.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(MyApp());
-}
 
- class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// Flutter entry section class main[]
+void main(){
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Teaching App',
-      debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
-    );
-  }
+  runApp(
+    // Provide theme to whole app
+    ChangeNotifierProvider(
+      create: (_) => ThemeProvider(),
+      child: MyApp(),
+    )
+  );
+  
 }
